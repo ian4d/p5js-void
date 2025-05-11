@@ -1,0 +1,45 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+
+#primaryCanvas {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.offside-regular {
+  font-family: "Offside", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.header {
+  padding: 0px 0px 0px 0px;
+  margin: auto auto auto auto;
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  text-align: center;
+  font-size: 5em;
+}
