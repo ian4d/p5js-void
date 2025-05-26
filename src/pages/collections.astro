@@ -1,0 +1,19 @@
+---
+import { getCollection } from "astro:content";
+import CollectionLayout from "../layouts/CollectionLayout.astro";
+import CollectionHeader from "../components/CollectionHeader.astro";
+import CollectionItemThumbnail from "../components/CollectionItemThumbnail.astro";
+const sketches = await getCollection("sketches");
+---
+<CollectionLayout>
+    <CollectionHeader name="Polyfields" />
+    <div id="collectionThumbs">
+        {
+            sketches.map((sketch: any) => (
+                <CollectionItemThumbnail sketch={sketch}/>
+            ))
+        }
+    </div>
+    <script type="module" src={"/src/scripts/sketches/sketch-thumbnail.ts"}
+    ></script>
+</CollectionLayout>

@@ -6,11 +6,14 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "clean": "rm -rf ./dist/"
   },
   "dependencies": {
-    "astro": "^5.7.12",
+    "@tweenjs/tween.js": "^25.0.0",
+    "astro": "^5.12.9",
     "gifenc": "^1.0.3",
-    "p5": "2.0.2"
+    "p5": "2.0.2",
+    "sass": "^1.89.2"
   }
 }

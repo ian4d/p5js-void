@@ -1,3 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
+/* Fonts */
+.silkscreen-regular {
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.silkscreen-bold {
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Standard Layout Stuff */
 html,
 body {
   margin: 0;
@@ -8,38 +24,137 @@ canvas {
   display: block;
 }
 
-#primaryCanvas {
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: auto;
-  margin-bottom: auto;
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
+/* Sketch Stuff */
+#sketchSlot {
+  display: grid;
+  grid-template-columns: 1fr minmax(600px, 1fr) 1fr;
+  gap: 10px;
+  width: 100%;
 }
 
-.offside-regular {
-  font-family: "Offside", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+#sketchSlot>div {
+  grid-column: 2 / 2;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
-.header {
-  padding: 0px 0px 0px 0px;
-  margin: auto auto auto auto;
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
+#sketchSlot>div:first-child {
+  border-top-style: solid;
+  border-top-width: 3em;
+  border-top-color: #CCCCCC;
+}
+
+#sketchSlot>div:not(:last-child) {
+  border-bottom-style: solid;
+  border-bottom-width: 1em;
+  border-bottom-color: #CCCCCC;
+}
+
+#sketchSlot>div:last-child {
   text-align: center;
-  font-size: 5em;
+}
+
+/* Sketch header styles used in nested grid */
+.sketch-header {
+  text-align: right;
+  font-size: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.sketch-header>span {
+  align-self: center;
+}
+
+.sketch-header>span:first-child {
+  text-align: left;
+}
+
+.sketch-header>span:last-child {
+  text-align: right;
+  font-size: 2em;
+}
+
+
+#collectionSlot {
+  display: grid;
+  grid-template-columns: 1fr minmax(600px, 1fr) 1fr;
+  gap: 10px;
+  width: 100%;
+}
+
+#collectionSlot>div {
+  grid-column: 2 / 2;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+/* Sketch Stuff */
+
+#collectionSlot>div:first-child {
+  border-top-style: solid;
+  border-top-width: 3em;
+  border-top-color: #CCCCCC;
+}
+
+#collectionSlot>div:not(:last-child) {
+  border-bottom-style: solid;
+  border-bottom-width: 1em;
+  border-bottom-color: #CCCCCC;
+}
+
+#collectionSlot>div:last-child {
+  text-align: center;
+}
+
+
+
+#collectionThumbs {
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 100px; */
+}
+
+#collectionThumbs>span {}
+
+
+.collectionLinkContainer {
+  position: relative;
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 5px;
+    width: 100px;
+  height: 100px;
+}
+
+.collectionLink {
+  /* position: relative; */
+  /* position: absolute;
+  top:0px;
+  left:0px; */
+}
+
+
+.collectionThumbStaticImg {
+  /* position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 0; */
+}
+
+.collectionThumbAnimation {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+
+}
+
+a:link,
+a:hover,
+a:visited,
+a:active,
+a:focus {
+  text-decoration: none;
+  color: #CD2020;
 }

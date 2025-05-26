@@ -2,7 +2,6 @@
 /**
  * Class that renders and wiggles
  */
-
 export class WiggleDot {
     x = 0;
     y = 0;
