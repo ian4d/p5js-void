@@ -3,10 +3,10 @@ const { sketch } = Astro.props;
 ---
 <div
     class="collectionLinkContainer"
-    data-script-src={`/p5js-void/src/scripts/sketches/${sketch.id}.ts`}
+    data-script-src={`/src/scripts/sketches/${sketch.id}.ts`}
     data-sketch-id={`${sketch.id}`}
 >
-    <a href={`/p5js-void/${sketch.id}`} class="collectionLink">
+    <a href={`/${sketch.id}`} class="collectionLink">
         <div id={`thumbnail-animation-${sketch.id}`} class="collectionThumbAnimation"></div>
     </a>
 </div>

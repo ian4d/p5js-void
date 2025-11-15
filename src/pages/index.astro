@@ -6,7 +6,7 @@ import Footer from "../components/Footer.astro";
 
 const sketches = await getCollection("sketches");
 const sketch = sketches[Math.floor(Math.random()*sketches.length)];
-const sketchSource = "/p5js-void/src/scripts/sketches/" + sketch.id + ".ts";
+const sketchSource = "/src/scripts/sketches/" + sketch.id + ".ts";
 ---
 <SketchLayout>
   <SketchHeader sketch={sketch}/>
