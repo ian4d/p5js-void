@@ -5,11 +5,14 @@ import type { Peg } from "./peg";
  * Abstract base implementation of Peg interface.
  */
 export abstract class BasePeg implements Peg {
+    draw(): void {
+        throw new Error("Method not implemented.");
+    }
     
     x: number = 0;
     y: number = 0;
     rotation: number = 0;
-    graphics: Graphics;
+    abstract graphics: Graphics;
 
     /**
      * {@inheritdoc Peg.setPosition}

@@ -1,4 +1,4 @@
-import type { Graphics, p5 } from "p5";
+import type { Graphics } from "p5";
 import type { Vertex } from "../vertex";
 import type { Peg } from "./peg";
 import { BasePeg } from "./basePeg";
@@ -20,6 +20,7 @@ export class Polygon extends BasePeg implements Peg {
     radius: number = 10;
     initialRadius: number = 10;
     points: Vertex[] = [];
+    graphics: Graphics;
 
     /**
      * Constructor
@@ -27,6 +28,7 @@ export class Polygon extends BasePeg implements Peg {
     constructor(polygonProps: PolygonProperties) {
         super();
         this.props = polygonProps;
+        this.graphics = polygonProps.graphics;
     }
 
     /**

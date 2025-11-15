@@ -3,18 +3,28 @@ import { getCollection } from "astro:content";
 import SketchLayout from "../layouts/SketchLayout.astro";
 import SketchHeader from "../components/SketchHeader.astro";
 import Footer from "../components/Footer.astro";
+import CollectionItemThumbnail from "../components/CollectionItemThumbnail.astro";
 
 const sketches = await getCollection("sketches");
-const sketch = sketches[Math.floor(Math.random()*sketches.length)];
-const sketchSource = "/p5js-void/src/scripts/sketches/" + sketch.id + ".ts";
+const sketch = sketches[Math.floor(Math.random() * sketches.length)];
+console.log("----");
+sketches.map((sketch: any) => {
+  console.log("Dynamic import for sketch:", JSON.stringify(sketch));
+});
 ---
+
 <SketchLayout>
-  <SketchHeader sketch={sketch}/>
-  <script>
-    window.autoInit = true;
-  </script>
-  <div id="sketch"></div>
-  <script type="module" is:inline src={sketchSource}></script>
+  <SketchHeader sketch={sketch} title="NIL" />
+  <div id="sketch">
+    {
+      sketches.map((sketch: any) => (
+        <CollectionItemThumbnail
+          sketchTitle={sketch.data.title}
+          sketchId={sketch.id}
+          sketchURL={sketch.url}
+        />
+      ))
+    }
+  </div>
   <Footer />
 </SketchLayout>
-

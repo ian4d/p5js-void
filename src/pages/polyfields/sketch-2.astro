@@ -1,0 +1,14 @@
+---
+import Footer from "../../components/Footer.astro";
+import SketchHeader from "../../components/SketchHeader.astro";
+import SketchLayout from "../../layouts/SketchLayout.astro";
+---
+
+<SketchLayout>
+  <SketchHeader title="Squares" collection="Polyfields" srcPath="https://github.com/ian4d/p5js-void/blob/init/src/scripts/sketches/polyfields/sketch-1.ts"/>
+  <div id="sketch"></div>
+   <script>
+    import { sketch } from "../../scripts/sketches/polyfields/sketch-2";
+   </script>
+  <Footer />
+</SketchLayout>

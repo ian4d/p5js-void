@@ -5,12 +5,14 @@ import { PolygonField } from "../../common/polygonfield";
 let sketch1WaveCount = 0;
 let sketch1PegRadiusDelta = 0;
 
-export const sketch = new PolygonField({
+export const sketch: PolygonField = new PolygonField({
     // Default values
     fieldHeight: 600,
     fieldWidth: 600,
     canvasHeight: 600,
     canvasWidth: 600,
+    animationEnabled: true,
+    autoInit: true,
 
     // Specific to this field
     verticeCount: 3,

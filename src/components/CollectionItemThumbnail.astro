@@ -1,12 +1,11 @@
 ---
-const { sketch } = Astro.props;
+const { sketchTitle, sketchId, sketchURL } = Astro.props;
 ---
-<div
-    class="collectionLinkContainer"
-    data-script-src={`/p5js-void/src/scripts/sketches/${sketch.id}.ts`}
-    data-sketch-id={`${sketch.id}`}
->
-    <a href={`/p5js-void/${sketch.id}`} class="collectionLink">
-        <div id={`thumbnail-animation-${sketch.id}`} class="collectionThumbAnimation"></div>
+
+<div>
+    <a href={`${import.meta.env.BASE_URL}/${sketchId}`}>
+        <div id={`thumbnail-animation-${sketchId}`} class="silkscreen-regular">
+            { sketchTitle }
+        </div>
     </a>
 </div>
