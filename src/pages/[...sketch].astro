@@ -15,7 +15,7 @@ export async function getStaticPaths() {
   return allSketchPaths;
 }
 const { sketch } = Astro.props;
-const sketchSource = "/src/scripts/sketches/" + sketch.id + ".ts";
+const sketchSource = "/p5js-void/src/scripts/sketches/" + sketch.id + ".ts";
 ---
 
 <SketchLayout>
