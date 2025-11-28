@@ -1,3 +1,4 @@
+import type { Graphics } from "p5";
 
 /**
  * Class that renders and wiggles
@@ -12,19 +13,18 @@ export class WiggleDot {
     /**
      * Constructor
      * 
-     * @param {*} baseSize 
-     * @param {*} graphics 
+     * @param {number} baseSize
+     * @param {Graphics} graphics 
      */
-    constructor(baseSize, graphics) {
+    constructor(baseSize: number, graphics: Graphics) {
         this.baseSize = baseSize;
         this.graphics = graphics;
     }
-    setPosition(xVal, yVal) {
+    setPosition(xVal: number, yVal: number) {
         this.x = xVal;
         this.y = yVal;
     }
-    setRotation(degrees) { }
-
+    setRotation(_: number) { }
     getSize() {
         return this.size;
     }
@@ -32,16 +32,16 @@ export class WiggleDot {
         return this.baseSize;
     }
 
-    setBaseSize(newBaseSize) {
+    setBaseSize(newBaseSize: number) {
         this.baseSize = newBaseSize;
     }
-    setSize(newSize) {
+    setSize(newSize: number) {
         this.size = newSize;
     }
 
     draw() {
         this.graphics.stroke('black');
         this.graphics.fill('white');
-        this.graphics.circle(this.x, this.y, this.size, this.size);
+        this.graphics.circle(this.x, this.y, this.size);
     }
 }

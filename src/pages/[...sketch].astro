@@ -1,5 +1,5 @@
 ---
-import { getCollection, render } from "astro:content";
+import { getCollection } from "astro:content";
 import SketchLayout from "../layouts/SketchLayout.astro";
 import SketchHeader from "../components/SketchHeader.astro";
 import Footer from "../components/Footer.astro";
@@ -22,6 +22,7 @@ const sketchSource = "/p5js-void/src/scripts/sketches/" + sketch.id + ".ts";
   <SketchHeader sketch={sketch}/>
   <div id="sketch"></div>
   <script>
+    declare const window: any;
     window.autoInit = true;
   </script>
   <script type="module" is:inline src={sketchSource} data-autoIni=true></script>

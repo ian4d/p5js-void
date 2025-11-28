@@ -10,10 +10,13 @@
     "clean": "rm -rf ./dist/"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.6",
     "@tweenjs/tween.js": "^25.0.0",
-    "astro": "^5.12.9",
+    "@types/p5": "^1.7.7",
+    "astro": "^5.16.2",
     "gifenc": "^1.0.3",
     "p5": "2.0.2",
-    "sass": "^1.89.2"
+    "sass": "^1.89.2",
+    "typescript": "^5.9.3"
   }
 }

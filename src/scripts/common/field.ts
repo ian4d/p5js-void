@@ -1,5 +1,5 @@
 import type { Graphics } from "p5";
-import type { p5 } from "p5";
+import p5 from "p5";
 import type { Polygon } from "./pegs/polygon";
 import type { Peg } from "./pegs/peg";
 

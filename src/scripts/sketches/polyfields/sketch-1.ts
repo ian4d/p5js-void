@@ -11,11 +11,13 @@ export const sketch = new PolygonField({
     fieldWidth: 600,
     canvasHeight: 600,
     canvasWidth: 600,
+    animationEnabled: true,
 
     // Specific to this field
     verticeCount: 3,
 
     fieldUpdateFunction: (field: Field) => {
+        console.debug(`Updating Field ${field}`);
         sketch1WaveCount = sketch1WaveCount + 2 * (Math.PI / 180);
         sketch1WaveCount = sketch1WaveCount % (2 * Math.PI);
         sketch1PegRadiusDelta = 2 * Math.sin(sketch1WaveCount);

@@ -11,6 +11,7 @@ const sketchSource = "/p5js-void/src/scripts/sketches/" + sketch.id + ".ts";
 <SketchLayout>
   <SketchHeader sketch={sketch}/>
   <script>
+    declare const window: any;
     window.autoInit = true;
   </script>
   <div id="sketch"></div>

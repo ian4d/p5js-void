@@ -1,6 +1,6 @@
 import p5 from "p5";
 import { Field } from "../common/field";
-import { Polygon, type PolygonProperties } from "../common/pegs/polygon";
+import { Polygon } from "../common/pegs/polygon";
 import type { Peg } from "./pegs/peg";
 
 const defaultCanvasWidth = 600;
@@ -83,7 +83,7 @@ export interface PolygonFieldProperties {
  */
 export class PolygonField {
 
-    p5: p5;
+    p5!: p5;
     props: PolygonFieldProperties;
     uid: string = `UID-${Math.random()}`;
     animationEnabled = false;
@@ -102,18 +102,12 @@ export class PolygonField {
     sketch = (s: p5) => {
 
         /**
-         * @param props New properties to set for the sketch
-         */
-        s.setProperties = (props: PolygonFieldProperties) => {
-            this.props = props;
-        }
-
-        /**
          * Sets up the canvas.
          */
         s.setup = () => {
             let canvas = s.createCanvas(this.props.canvasWidth || defaultCanvasWidth, this.props.canvasHeight || defaultCanvasHeight);
-            canvas.id(this.props.canvasId);
+            // canvas.id(this.props.canvasId);
+            canvas.id(this.props.canvasId || 'sketch');
             s.frameRate(30);
             s.colorMode(s.RGB);
             this.buildPolygonField(this.props.verticeCount);
@@ -236,7 +230,7 @@ export class PolygonField {
     init = () => {
         if (!this.p5) {
             let canvasId = this.props.canvasId || 'sketch';
-            this.p5 = new p5(this.sketch, document.getElementById(canvasId));
+            this.p5 = new p5(this.sketch, document.getElementById(canvasId) as HTMLElement);
             // this.p5.draw();
         }
     }
