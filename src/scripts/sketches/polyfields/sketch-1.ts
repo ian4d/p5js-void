@@ -12,6 +12,7 @@ export const sketch = new PolygonField({
     canvasHeight: 600,
     canvasWidth: 600,
     animationEnabled: true,
+    autoInit: true,
 
     // Specific to this field
     verticeCount: 3,

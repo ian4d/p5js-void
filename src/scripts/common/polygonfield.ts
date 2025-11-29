@@ -18,6 +18,11 @@ const defaultBackgroundColor = 'white';
 export interface PolygonFieldProperties {
 
     /**
+     * Whether to automatically begin playing the animation or not.  Default is false.
+     */
+    autoInit?: boolean,
+
+    /**
      * Width of the field to draw in.
      */
     fieldWidth: number,
@@ -174,7 +179,7 @@ export class PolygonField {
      */
     constructor(props: PolygonFieldProperties) {
         this.props = props;
-        if (window.autoInit) {
+        if (this.props.autoInit ?? window.autoInit) {
             this.init();
             this.start();
         }
