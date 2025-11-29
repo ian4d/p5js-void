@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
-import SketchLayout from "../layouts/SketchLayout.astro";
-import SketchHeader from "../components/SketchHeader.astro";
-import Footer from "../components/Footer.astro";
+import SketchLayout from "../../layouts/SketchLayout.astro";
+import SketchHeader from "../../components/SketchHeader.astro";
+import Footer from "../../components/Footer.astro";
 
 export async function getStaticPaths() {
   const sketches = await getCollection("sketches");
@@ -25,6 +25,6 @@ const sketchSource = "/p5js-void/src/scripts/sketches/" + sketch.id + ".ts";
     declare const window: any;
     window.autoInit = true;
   </script>
-  <script type="module" is:inline src={sketchSource} data-autoIni=true></script>
+  <script type="module" is:inline src={sketchSource} data-autoInit=true></script>
   <Footer />
 </SketchLayout>

@@ -4,18 +4,19 @@ import SketchLayout from "../layouts/SketchLayout.astro";
 import SketchHeader from "../components/SketchHeader.astro";
 import Footer from "../components/Footer.astro";
 
+
 const sketches = await getCollection("sketches");
 const sketch = sketches[Math.floor(Math.random()*sketches.length)];
-const sketchSource = "/p5js-void/src/scripts/sketches/" + sketch.id + ".ts";
+const sketchSource = `../scripts/sketches/${sketch.id}.ts`;
 ---
 <SketchLayout>
   <SketchHeader sketch={sketch}/>
   <script>
     declare const window: any;
-    window.autoInit = true;
+    window.autoInit = true; 
   </script>
   <div id="sketch"></div>
-  <script type="module" is:inline src={sketchSource}></script>
+  <script src={sketchSource}></script>
   <Footer />
 </SketchLayout>
 
