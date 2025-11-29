@@ -1,3 +1,3 @@
 interface Window {
-    autoInit: boolean = false;
+    autoInit: boolean = true;
 }
