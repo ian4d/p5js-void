@@ -5,7 +5,7 @@ import { PolygonField } from "../../common/polygonfield";
 let sketch1WaveCount = 0;
 let sketch1PegRadiusDelta = 0;
 
-export const sketch = new PolygonField({
+export const sketch: PolygonField = new PolygonField({
     // Default values
     fieldHeight: 600,
     fieldWidth: 600,
@@ -18,7 +18,7 @@ export const sketch = new PolygonField({
     verticeCount: 3,
 
     fieldUpdateFunction: (field: Field) => {
-        console.debug(`Updating Field ${field}`);
+        // console.debug(`Updating Field ${field}`);
         sketch1WaveCount = sketch1WaveCount + 2 * (Math.PI / 180);
         sketch1WaveCount = sketch1WaveCount % (2 * Math.PI);
         sketch1PegRadiusDelta = 2 * Math.sin(sketch1WaveCount);

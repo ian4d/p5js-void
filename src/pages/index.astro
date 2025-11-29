@@ -15,8 +15,8 @@ const sketchSource = `../scripts/sketches/${sketch.id}.ts`;
     declare const window: any;
     window.autoInit = true; 
   </script>
-  <div id="sketch"></div>
-  <script src="../scripts/sketches/polyfields/sketch-1.ts"></script>
+  <div id="sketch" data-source={sketchSource}></div>
+  <script src="../scripts/index.ts"></script>
   <Footer />
 </SketchLayout>
 
