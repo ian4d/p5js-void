@@ -4,7 +4,6 @@ const sketchData = sketchContainer?.dataset.source;
 const actualSketch = import (sketchData as string);
 console.debug(`Actual Sketch: ${actualSketch}`);
 actualSketch.then((module) => {
-
     if (module && module.sketch) {
         console.log(`Initializing Sketch: ${module.sketch}`);
         module.sketch.init(sketchContainer as HTMLElement);
