@@ -5,12 +5,19 @@ import {PolygonField, type PolygonFieldProperties } from "../../common/polygonfi
 let sketch3WaveCount = 0;
 let sketch3PegRadiusDelta = 0;
 
+const sketchDiv: HTMLElement = document.getElementById('sketch')!;
+const sketchDivStyle: CSSStyleDeclaration = window.getComputedStyle(sketchDiv);
+const paddingLeft = parseFloat(sketchDivStyle.getPropertyValue('padding-left'));
+const paddingRight = parseFloat(sketchDivStyle.getPropertyValue('padding-right'));
+const canvasWidth: number = Math.min(600, sketchDiv.getBoundingClientRect().width - paddingLeft - paddingRight);
+const canvasHeight: number = 600;
+
 export const SketchProps: PolygonFieldProperties = {
     // Default values
-    fieldHeight: 600,
-    fieldWidth: 600,
-    canvasHeight: 600,
-    canvasWidth: 600,
+    fieldHeight: canvasHeight,
+    fieldWidth: canvasWidth,
+    canvasHeight: canvasHeight,
+    canvasWidth: canvasWidth,
     animationEnabled: true,
     autoInit: true,
 
